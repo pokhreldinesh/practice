@@ -1,4 +1,4 @@
-package com.java.pratice.geometry;
+package com.java.practice.geometry;
 
 public class ShapeTester {
 
