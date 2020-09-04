@@ -1,4 +1,4 @@
-package com.java.practice.student;
+package test.java.student;
 
 public class Student {
 	int a; // initialized to zero

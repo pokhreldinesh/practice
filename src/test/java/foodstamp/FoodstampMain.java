@@ -1,4 +1,4 @@
-package com.java.practice.foodstamp;
+package test.java.foodstamp;
 
 public class FoodstampMain{
 

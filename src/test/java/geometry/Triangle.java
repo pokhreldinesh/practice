@@ -1,4 +1,4 @@
-package com.java.practice.geometry;
+package test.java.geometry;
 
 public class Triangle extends Shape{
 	

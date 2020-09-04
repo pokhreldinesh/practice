@@ -1,49 +1,49 @@
-package com.java.practice.foodstamp;
+package test.java.foodstampfile;
 
-public class FoodstampReceiver {
-	private String firstName, lastName, street, city, state;
+public class FoodStampVerification {
+	private String firstName, lastName, street, city, county;
 	private int houseNumber;
-	private int headCount;
+	private int headCountInt;
 	private double income;
 	public final int ID;   // use final to declare constant 
 	private static int objectCount = 0;
 
 	
-	public FoodstampReceiver(String firstName, String lastName, int houseNumber, 
-			String street, String city, String state, int headCount, double income) {
+	public FoodStampVerification(String firstName, String lastName, int houseNumber, 
+			String street, String city, String County, int headCountInt, double income) {
 		ID = ++objectCount;
 		setFirstName(firstName);
 		setLastName(lastName);
 		setHouseNumber(houseNumber);
 		setStreet(street);
 		setCity(city);
-		setState(state);
-		setHeadCount(headCount);
+		setCounty(County);
+		setHeadCountInt(headCountInt);
 		setIncome(income);	
 	}
 	
-	public FoodstampReceiver(String firstName, String lastName, int headCount, double income,
-			int houseNumber, String street, String city, String state) {
+	public FoodStampVerification(String firstName, String lastName, int headCount, double income,
+			int houseNumber, String street, String city, String county) {
 		ID = ++objectCount;
 		setFirstName(firstName);
 		setLastName(lastName);
-		setHeadCount(headCount);
+		setHeadCountInt(headCount);
 		setIncome(income);	
 		setHouseNumber(houseNumber);
 		setStreet(street);
 		setCity(city);
-		setState(state);
+		setCounty(county);
 	}
 	
-	public FoodstampReceiver(String firstName, String lastName, int headCount, double income) {
-		this(firstName, lastName, 0, 0, 0, "","","");
+	public FoodStampVerification(String firstName, String lastName, int headCountInt, double income) {
+		this(firstName, lastName, headCountInt, income, 0, "","","");
 	}
 	
-	public FoodstampReceiver(String firstName, String lastName) {
+	public FoodStampVerification(String firstName, String lastName) {
 		this(firstName, lastName, 0, 0);
 	}
 	
-	public FoodstampReceiver() {
+	public FoodStampVerification() {
 		this("--", "--");
 	}
 	
@@ -93,16 +93,16 @@ public class FoodstampReceiver {
 		this.city = city;
 	}
 	
-	public void setState(String state) {
-		if (state.equals(""))
-			state = "--";
-		this.state = state;
+	public void setCounty(String county) {
+		if (county.equals(""))
+			county = "--";
+		this.county = county;
 	}
 	
-	public void setHeadCount(int headCount) {
-		if (headCount == 0)
-			headCount = 1;
-		this.headCount =headCount;
+	public void setHeadCountInt(int headCountInt) {
+		if (headCountInt == 0)
+			headCountInt = 1;
+		this.headCountInt =headCountInt;
 	}
 	
 	public void setIncome(double income) {
@@ -112,22 +112,23 @@ public class FoodstampReceiver {
 	}
 	
 	public boolean getFoodstamp() {
-		if (income <= 10000 && headCount == 1)
+		if (income <= 10000 && headCountInt == 1)
 			return true;
-		if (income <= 25000 && headCount >= 2)
+		if (income <= 25000 && headCountInt >= 2)
 			return true;
-		if (income <= 40000 && headCount >= 3)
+		if (income <= 40000 && headCountInt >= 3)
 			return true;
-		if (income <= 60000 && headCount >= 4)
+		if (income <= 60000 && headCountInt >= 4)
 			return true;
-		if (income <= 100000 && headCount >= 5)
+		if (income <= 100000 && headCountInt >= 5)
 			return true;
 		return false;
 	}
 	
 	public String toString() {
 		return "{" + ID + ", First Name: " + firstName + ", Last Name:  " + lastName + ", Income:  "
-				+ income + ", Head Count: " + headCount + ", Eligible for Foodstamp: " +getFoodstamp() + 
-				"\nAddress: " + houseNumber + " " + street + ", " + city + ", " + state + "}\n";
+				+ income + ", Head Count: " + headCountInt + "\nAddress: " + houseNumber + " " 
+				+ street + ", " + city + ", " + county + ", Eligible for Foodstamp: " +getFoodstamp() + "}\n";
 	}
 }
+

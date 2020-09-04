@@ -1,4 +1,4 @@
-package com.java.practice.interest;
+package test.java.interest;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
